@@ -1,5 +1,5 @@
 import React from "react";
-import AboutSectionNavbar from "./AboutsectionNavabr.jsx";
+import AboutSectionNavbar from "./AboutSectionNavabr.jsx";
 const Navbar = ({ isOpen }) => {
   return (
     <div
