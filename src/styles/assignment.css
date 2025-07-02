@@ -1,0 +1,146 @@
+
+
+.a-container {
+  font-family: 'Times New Roman', Times, serif,  sans-serif;
+  /* Standard A4 paper dimensions: 210mm x 297mm */
+  width: 794px;
+  height: 1123px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+}
+.a-content {
+  margin-top: 90px;
+  margin-bottom: 40px;
+  margin-left: 60px;
+  margin-right: 0px;
+  height: 950px;
+  width: 664px;
+  /* margin: 60px 8px 60px 8px; */
+  border: 7px solid rgb(0, 0, 0);
+  /* border-style:double; */
+  border-style: double;
+}
+
+.a-icon-div {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: auto;
+  flex-wrap: wrap;
+}
+#img1 {
+    filter: grayscale(90%);
+    
+  height: 120px;
+  width: 619px;
+}
+
+.a-asignment-div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 60px;
+  height: 190px;
+  width: 600px;
+  border: 7px double #000000;
+  border-radius: 0.25rem;
+}
+
+.a-assignment-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0px 10px 0px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 10px 0;
+  border-bottom: 7px double black;
+
+
+  
+}
+.a-course-code-para-div {
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px 10px 10px 10px;
+}
+
+.a-content-section {
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  gap: 1rem;
+}
+
+.a-left-section,
+.a-right-section {
+  flex: 1;
+}
+
+.a-section-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 0px;
+}
+
+.a-form-field {
+  height: 60px;
+  width: 350px;
+  display: flex;
+  align-items: start;
+}
+.a-right-section {
+  padding-left: 10px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.a-field-label {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 22px;
+}
+
+.a-field-value {
+  margin-top: 0px;
+  justify-content: start;
+  align-content: end;
+  margin-bottom: 0px;
+  flex: 1;
+  height: 24px;
+  font-size: 22px;
+}
+
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+  }
+ 
+
+  .a-container {
+    box-shadow: none;
+    border-radius: 0;
+    width: 210mm;
+    height: 297mm;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    page-break-after: always;
+  }
+}
+

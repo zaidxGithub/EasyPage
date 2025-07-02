@@ -1,0 +1,185 @@
+
+        .lab-container {
+            font-family: 'Times New Roman', Times, serif;
+            width: 794px;  
+            height: 1123px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 1px;
+            overflow: hidden;
+        }
+
+        .lab-header {
+            height: 210px;
+            width: 694px;
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 38px;
+            /* border-bottom: 3px solid #2c3e50; */
+            padding-bottom: 0px;
+             padding-left: 14px;
+            /* background-color: green; */
+            /* border: 2px solid red; */
+        }
+
+        .lab-uni-logo-img-div{
+            height: auto;
+            width: 694px;
+            margin-bottom: 25px;
+            /* border:2px solid red; */
+        
+        }
+        #lab-uni-logo-img{
+           height:auto ;
+           width: 694px;
+           
+
+        }
+
+        .lab-department {
+            /* font-size: 22px; */
+            
+            /* font-weight: bold; */
+            /* color: #000000; */
+            /* margin-bottom: 10px; */
+            /* letter-spacing: .6px; */
+            line-height: 12px;
+            text-decoration: underline;
+            text-underline-offset: 3.5px;
+        } 
+    
+
+        .lab-title {
+            font-size: 27px;
+            font-weight: bold;
+            color: #000000;
+            margin: 26px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .lab-year {
+            font-size: 26px;
+            color: #000000;
+            font-weight: bold;
+            /* margin-bottom: 10px; */
+            text-align: center;
+        }
+
+        .lab-course-info {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .lab-course-name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .lab-course-code {
+            font-size: 26px;
+            color: #000000;
+            font-weight: bold;
+        }
+/* 
+        .lab-details-section {
+            width: 694px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 95px;
+            margin-left: 20px;
+            gap:15px;
+            
+        } */
+       
+
+        .lab-left-section, .lab-right-section {
+            flex: 1;
+        }
+      
+        .lab-right-section{
+             max-width: 250px;
+             margin-bottom:0px;
+             margin-right: 0px;
+             /* margin-left: 50px; */
+             
+             
+        }
+
+        .lab-section-title {
+            
+            font-size: 21Px;
+            font-weight: bold;
+            margin-bottom: 35px;
+           
+        }
+
+        .lab-info-row {
+            /* border: 2px solid green;  */
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+            gap: 0rem;
+            column-gap: 0px;
+        }
+
+        .lab-label {
+            /* border: 2px solid blue; */
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            min-width: 140px;
+            margin-right: 0px;
+            /* gap: 10rem; */
+            /* background-color: #8c2d2d; */
+        }
+       
+        .lab-value {
+            font-size: 20px;
+            color: #000000;
+            font-weight: bold;
+            flex: 1;
+            margin-left: 10px;
+            /* border: 1px solid red */
+            
+          
+        }
+ 
+       
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .lab-container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lab-details-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .lab-container {
+                padding: 30px 20px;
+            }
+            
+            .lab-title {
+                font-size: 20px;
+            }
+        }
