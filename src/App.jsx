@@ -71,13 +71,15 @@ const [isPreview, setIsPreview] = useState(true);
 
 
   return (
-    <div   className="min-h-screen   bg-white/60    backdrop-blur-md  ">
-<header className="sm:bg-black/90  bg-black/90  backdrop-blur-md  sticky top-0 z-50 border-2  h-15  sm:h-17 border-b-blue-300"   >
+
+    <> 
+    <header className=" fixed top-0 left-0 right-0  sm:bg-black/90  bg-black/90  z-50 backdrop-blur-md    border-2  h-15  sm:h-17 border-b-blue-300"   >
+
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-1    ">
     <div className="flex items-center justify-between sm:h-16 h-13  ">
       <div className="flex items-center space-x-0 h-16  ">
 
-        <ToastContainer position="top-center" autoClose={60500}   
+        <ToastContainer position="top-center" autoClose={2000}   
         />
       
 
@@ -95,7 +97,7 @@ const [isPreview, setIsPreview] = useState(true);
 
 
 
-      <div className='h-9 w-9 '>  
+      <div className='h-9 w-9   '>  
        
           <button className='invert brightness-200 h-9 w-9 ' onClick={()=>{
             setIsNavbarOpen(prev=>!prev);
@@ -128,12 +130,14 @@ const [isPreview, setIsPreview] = useState(true);
   </div>
 </header>
 
+    <div   className=" mt-10 sm:mt-18 lg-mt-18 min-h-screen   bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50   backdrop-blur-md   ">
+
 
 
 
 <section className="py-12 sm:py-10  sm:h-110 h-95 ">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-a-blue-600 ">
-    <div className="max-w-3xl mx-auto  sm:mt-10 ">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-a-blue-600    ">
+    <div className="max-w-3xl mx-auto  sm:mt-10  ">
       <h3 className="text-3xl  sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-3 mt-4 ">
              Tired of making front pages from scratch?
 
@@ -185,7 +189,7 @@ const [isPreview, setIsPreview] = useState(true);
 )}
 
 
- <div className="flex justify-center items-center bg-white/60  mt-5 mb-5 flex-col">
+ <div className="flex justify-center items-center   mt-5 mb-5 flex-col  bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50   backdrop-blur-md ">
       <button  disabled={isDownloading}
       
       
@@ -194,8 +198,8 @@ const [isPreview, setIsPreview] = useState(true);
         onClick={async () => {
          
           setDownload("true");
-          setIsPreview(false); // Reset scaling
-          await new Promise((res) => setTimeout(res, 300)); // Wait for DOM update
+          setIsPreview(false);
+          await new Promise((res) => setTimeout(res, 300));
         try{
 
            await generatePDF();
@@ -210,7 +214,7 @@ const [isPreview, setIsPreview] = useState(true);
         }}
 
       > 
-        {isDownloading ? "Downloading...":"Downlaod Your PDF"}
+        {isDownloading ? "Downloading...":"Downlaod PDF"}
       </button>
           <div className=' flex items-center p-1 mt-3 text-sm text-yellow-800 bg-yellow-50 border border-yellow-300 rounded-md sm:w-[27%] w-[95%] mx-auto" role="alert ' > 
     
@@ -234,7 +238,7 @@ const [isPreview, setIsPreview] = useState(true);
                <div>
                  <div className="flex items-center space-x-3 mb-3">
                    <div className="p-1 bg-gradient-to-r rounded-md  flex flex-row gap-2">
-                     {/* <FileText className="h-6 w-6 text-white" /> */}
+                   
 
                      <img src={easypagelogo}  className='h-7 w-7  rounded-md'/>
                      <h3 className="text-xl font-bold uppercase">Easy <span className='bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent'> Page</span></h3>
@@ -284,7 +288,6 @@ const [isPreview, setIsPreview] = useState(true);
     />
     <div>
       <span className="font-medium">WhatsApp</span>
-      <p className="text-sm text-gray-500">+919696419984</p>
     </div>
   </a>
 
@@ -327,25 +330,17 @@ const [isPreview, setIsPreview] = useState(true);
           <div className="border-t border-gray-800 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-               © 2025 Made by Mohammad Zaid
+               © 2025 Mohammad Zaid | Designed & Developed with care. All rights reserved.
+
               </p>
-              {/* <div className="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                  Privacy Policy
-             </a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                  Terms of Service
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                  Support
-                </a>
-              </div> */}
+             
             </div>
           </div>
         </div>
       </footer>
 
     </div>
+    </>
 
   );
 }
