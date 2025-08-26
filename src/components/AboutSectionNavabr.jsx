@@ -5,7 +5,7 @@ const AboutSectionNavbar= () => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-12 text-gray-800  ">
       
-      {/* 🔹 About Developer */}
+      
       <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col md:flex-row items-center gap-4">
 
         <div className="w-30 sm:h-30 sm:w-55 rounded-full overflow-hidden border-4 border-black-300 shadow-md">
@@ -27,7 +27,7 @@ const AboutSectionNavbar= () => {
         </div>
       </div>
 
-      {/* 🔹 About This App */}
+     
       <div className="bg-white shadow-lg rounded-xl text-md p-6">
         <h2 className="text-1xl sm:text-3xl font-bold mb-2">About This App</h2>
         <p className="text-s sm:text-lg leading-relaxed">
@@ -37,7 +37,7 @@ const AboutSectionNavbar= () => {
         </p>
       </div>
 
-      {/* 🔹 Disclaimer */}
+      
       <div className="bg-white border-l-4 border-red-500 rounded-xl p-6 mb-20 text-md">
         <h2 className="sm:text-3xl font-bold mb-2">Developer's Note</h2>
         <p className="sm:text-lg text-s text-red-500 leading-relaxed">
