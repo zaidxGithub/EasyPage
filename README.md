@@ -46,7 +46,7 @@ As a CSE student, I saw many peers struggle with creating front pages at the las
 
 ##Preview
 
-![Preview](https://github.com/zaidxGithub/EasyPage/issues/1)  
+![Preview](https://github.com/zaidxGithub/EasyPage/blob/main/public/Screenshot%202026-08-25%20202802.png)  
 
 
 ---
