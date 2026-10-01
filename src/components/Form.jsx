@@ -1,159 +1,452 @@
 import React, { useState } from "react";
-import { ToastContainer } from "react-toastify";
-
 import { toast } from "react-toastify";
+import {
+  FileText,
+  BookOpen,
+  User,
+  GraduationCap,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
+
+
+
+const sections = {
+  1: [
+    {
+      title: "Course",
+      hint: "What the assignment is for",
+      fields: ["assignmentNumber", "courseCode", "courseName"],
+    },
+    {
+      title: "Student",
+      hint: "Your details",
+      fields: ["name", "enrollment", "branch", "year", "semester"],
+    },
+    {
+      title: "Faculty",
+      hint: "Who it is submitted to",
+      fields: ["facultyName"],
+    },
+  ],
+
+  2: [
+    {
+      title: "Course",
+      hint: "What the lab is for",
+      fields: ["acedamicYear", "courseCode", "courseName"],
+    },
+    {
+      title: "Student",
+      hint: "Your details",
+      fields: ["name", "enrollment", "branch", "year", "semester", "group"],
+    },
+    {
+      title: "Faculty",
+      hint: "Who it is submitted to",
+      fields: [
+        "AssitantProfessorName",
+        "labInstructorType",
+        "labInstrutorName",
+      ],
+    },
+  ],
+};
+
+const templateFields = Object.fromEntries(
+  Object.entries(sections).map(([key, list]) => [
+    key,
+    list.flatMap((s) => s.fields),
+  ]),
+);
+
+const fieldLabels = {
+  assignmentNumber: "Assignment number",
+  courseCode: "Course code",
+  courseName: "Subject name",
+  name: "Student name",
+  branch: "Branch",
+  acedamicYear: "Academic year",
+  semester: "Semester",
+  enrollment: "Enrollment number",
+  facultyName: "Faculty name",
+  group: "Group",
+  AssitantProfessorName: "Assistant professor name",
+  labInstrutorName: "Lab instructor name",
+  year: "Year",
+  labInstructorType: "Lab instructor type",
+};
+
+const placeholders = {
+  assignmentNumber: "1 or 2",
+  courseCode: "e.g. CS301",
+  courseName: "e.g. Data Structures",
+  name: "Full name",
+  branch: "e.g. Computer Science",
+  acedamicYear: "e.g. 2025-26",
+  semester: "e.g. 5",
+  enrollment: "e.g. 2301234567",
+  facultyName: "Full name",
+  group: "e.g. A1",
+  AssitantProfessorName: "Full name",
+  labInstrutorName: "Full name",
+  year: "e.g. 3",
+};
+
+const templates = [
+  {
+    id: "1",
+    label: "Assignment",
+    note: "Cover page for written work",
+    icon: FileText,
+  },
+  {
+    id: "2",
+    label: "Lab Report",
+    note: "Includes group and lab instructor",
+    icon: BookOpen,
+  },
+];
 
 function Form({ onSubmit }) {
   const [template, setTemplate] = useState("1");
   const [formData, setFormData] = useState({});
-
-  const templateFields = {
-    1: [
-      "assignmentNumber","courseCode","courseName",
-      "name",
-      "branch",
-      "year",
-      "semester",
-      "enrollment",
-      "facultyName",
-    ],
-    2: [
-      "acedamicYear",
-      "courseCode",
-      "courseName",
-      "name",
-      "branch",
-      "year",
-      "semester",
-      "enrollment",
-      "group",
-      "AssitantProfessorName",
-      "labInstructorType",
-      "labInstrutorName",
-    ],
-  };
-  const fieldLabels = {
-    assignmentNumber: "Assignment 1 or 2",
-    courseCode: "COURSE CODE",
-    courseName: "COURSE NAME",
-    name: "STUDENT NAME",
-    branch: "BRANCH",
-    acedamicYear: "ACADEMIC YEAR",
-    semester: "SEMESTER",
-    enrollment: "ENROLLMENT NO",
-    facultyName: "FACULTY NAME",
-    group: "GROUP",
-    AssitantProfessorName: "ASSISTANT PROFESSOR NAME",
-    labInstrutorName: "LAB INSTRUCTOR NAME",
-    year: "Year ",
-    labInstructorType: " Lab Instructor Type",
-  };
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+    const { name, value } = e.target;
 
-  const isFormValid = (FormData, template) => {
-    const reqFields = templateFields[template];
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
 
-    for (const field of reqFields) {
-      if (!FormData[field] || FormData[field].trim() === "") {
-        return false;
-      }
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: false,
+      }));
     }
-
-    return true;
   };
+
+  const getMissingFields = (data, tpl) =>
+    templateFields[tpl].filter(
+      (field) => !data[field] || data[field].trim() === "",
+    );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!isFormValid(formData, template)) {
-      toast.error("fill the details first:");
+
+    const missing = getMissingFields(formData, template);
+
+    if (missing.length > 0) {
+      setErrors(Object.fromEntries(missing.map((field) => [field, true])));
+
+      toast.error(
+        `Complete ${missing.length} required ${
+          missing.length === 1 ? "field" : "fields"
+        } to continue.`,
+      );
+
       return;
-    } else {
-      onSubmit({ ...formData, template });
     }
+
+    onSubmit({
+      ...formData,
+      template,
+    });
   };
 
-  const handleTemplateChange = (e) => {
-    const selectedTemplate = e.target.value;
-    setTemplate(selectedTemplate);
+
+
+  const handleTemplateChange = (id) => {
+    if (id === template) return;
+
+    setTemplate(id);
     setFormData({});
+    setErrors({});
+  };
+
+
+
+  const renderField = (field) => {
+    const hasError = errors[field];
+    const id = `field-${field}`;
+
+    return (
+      <div
+        key={field}
+        className={`group form-field ${
+          field === "courseName" ? "form-field--wide" : ""
+        }`}
+      >
+
+        <label
+          htmlFor={id}
+          className="form-field-label"
+        >
+          {fieldLabels[field]}
+        </label>
+
+
+        <div className="relative">
+          {field === "labInstructorType" ? (
+            <select
+              id={id}
+              name={field}
+              value={formData[field] || ""}
+              onChange={handleChange}
+              aria-invalid={hasError ? "true" : undefined}
+              className={`form-control form-control--select ${
+                hasError ? "form-control--error" : "form-control--ready"
+              }`}
+            >
+              <option value="">Select type</option>
+
+              <option value="SR. LAB INSTRUCTOR">Sr. Lab Instructor</option>
+
+              <option value="JR. LAB INSTRUCTOR">Jr. Lab Instructor</option>
+
+              <option value="LAB INSTRUCTOR">Lab Instructor</option>
+            </select>
+          ) : (
+            <input
+              id={id}
+              name={field}
+              value={formData[field] || ""}
+              onChange={handleChange}
+              placeholder={placeholders[field]}
+              autoComplete="off"
+              aria-invalid={hasError ? "true" : undefined}
+              className={`form-control form-control--input ${
+                hasError ? "form-control--error" : "form-control--ready"
+              }`}
+            />
+          )}
+
+          {formData[field] && !hasError && (
+            <CheckCircle2
+              className="form-field-success"
+            />
+          )}
+        </div>
+
+        {hasError && (
+          <p
+            className="form-field-error"
+          >
+            <AlertCircle className="form-field-error-icon" />
+            {fieldLabels[field]} is required.
+          </p>
+        )}
+      </div>
+    );
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 sm:py-12 py-8 px-4  mt-0   ">
-      <div className=" max-w-5xl mx-auto  ">
-        <div className="bg-white rounded-2xl shadow-xl p-4 border-2 border-blue-200 ">
-          <div className="mb-6 ">
-            <label className="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
-              Select Template
-            </label>
-            <select
-              name="template"
-              onChange={handleTemplateChange}
-              value={template}
-              className="w-full  mx-auto sm:w-[94%] block p-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200 text-gray-700 font-medium bg-gray-50 hover:bg-white outline-none"
-            >
-              <option value="1">📝 Assignment</option>
-              <option value="2">🔬 Lab Report</option>
-            </select>
-          </div>
+    <div
+      className="form-page"
+    >
+      <div className="form-background" aria-hidden="true">
+        <div
+          className="form-background-orb form-background-orb--upper-left"
+        />
 
-          <div className="space-y-4  sm:flex sm:flex-wrap sm:space-y-1 sm:space-x-5 sm:ml-9">
-            {templateFields[template].map((field, index) =>
-              field === "labInstructorType" ? (
-                <div key={field} className="mb-4  sm:mt-3">
-                  <label className="block font-semibold mb-2">
-                    {fieldLabels[field]}
-                  </label>
-                  <select
-                    name="labInstructorType"
-                    className="w-full p-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200 text-gray-700 placeholder-gray-400 bg-gray-50 hover:bg-white group-hover:border-gray-300 outline-none"
-                    value={formData.labInstructorType || ""}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select Instructor Type</option>
-                    <option value="SR. LAB INSTRUCTOR">
-                      JR. LAB INSTRUCTOR
-                    </option>
-                    <option value="JR. LAB INSTRUCTOR">
-                      SR. LAB INSTRUCTOR
-                    </option>
-                    <option value="LAB INSTRUCTOR">LAB INSTRUCTOR</option>
-                  </select>
-                </div>
-              ) : (
-                <div key={field} className="group sm:mt-3">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
-                    {fieldLabels[field]}
-                  </label>
-                  <input
-                    name={field}
-                    placeholder={`Enter ${fieldLabels[field].toLowerCase()}`}
-                    value={formData[field] || ""}
-                    onChange={handleChange}
-                    className="sm:w-112 w-full p-3 border-2 border-gray-200 rounded-xl roun focus:ring-4 focus:ring-blue-100 sm:mt-1 focus:border-blue-500 transition-all duration-200 text-gray-700 placeholder-gray-400 bg-gray-50 hover:bg-white group-hover:border-gray-300 outline-none"
-                  />
-                </div>
-              )
-            )}
-          </div>
+        <div
+          className="form-background-orb form-background-orb--upper-right"
+        />
 
-          <button
-            onClick={handleSubmit}
-            className="w-full mx-auto sm:w-[80%] block mt-7 sm:mt-10 sm:mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 
-             rounded-xl hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+        <div
+          className="form-background-orb form-background-orb--lower"
+        />
+
+        <div
+          className="form-background-orb form-background-orb--center"
+        />
+      </div>
+
+      <div className="form-container">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="form-shell"
+        >
+
+          {/* Template selection */}
+          <div
+            className="template-panel"
           >
-            Generate Your PDF
-          </button>
-        </div>
+            <div className="template-panel-heading">
+              <div>
+                <div className="template-title-row">
+                  <span className="template-title-icon">
+                    <FileText className="h-4 w-4" />
+                  </span>
 
-        <div className="text-center mt-6">
-          <p className="text-gray-500 text-sm">
-            Your Page will be generated instantly
-          </p>
+                  <p className="text-sm font-bold text-slate-900">
+                    Choose a template
+                  </p>
+                </div>
+
+                <p className="template-instructions">
+                  Select the type of cover page you want to create.
+                </p>
+              </div>
+
+              <span
+                className="template-step"
+              >
+                Step 1
+              </span>
+            </div>
+
+            <div
+              role="radiogroup"
+              aria-label="Template"
+              className="template-grid"
+            >
+              {templates.map((t) => {
+                const active = template === t.id;
+                const Icon = t.icon;
+
+                return (
+                  <button
+                    key={t.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => handleTemplateChange(t.id)}
+                    className={`template-option ${
+                      active
+                        ? "template-option--active"
+                        : "template-option--idle"
+                    }`}
+                  >
+                    {active && (
+                      <div
+                        className="template-option-glow"
+                      />
+                    )}
+
+                    <div className="template-option-content">
+                      <span
+                        className={`template-option-icon ${
+                          active
+                            ? "template-option-icon--active"
+                            : "template-option-icon--idle"
+                        }`}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </span>
+
+                      <span className="template-option-copy">
+                        <span
+                          className={`template-option-title ${
+                            active
+                              ? "template-option-title--active"
+                              : "template-option-title--idle"
+                          }`}
+                        >
+                          {t.label}
+                        </span>
+
+                        <span className="template-option-note">
+                          {t.note}
+                        </span>
+                      </span>
+
+                      {active && (
+                        <CheckCircle2
+                          className="template-option-check"
+                        />
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Form sections */}
+          {sections[template].map((section, index) => (
+            <section
+              key={section.title}
+              className="form-section"
+            >
+              <div className="form-section-layout">
+                <div>
+                  <div className="form-section-title-row">
+                    <span className="form-section-icon">
+                      {index === 0 && <BookOpen className="h-4 w-4" />}
+
+                      {index === 1 && <User className="h-4 w-4" />}
+
+                      {index === 2 && <GraduationCap className="h-4 w-4" />}
+                    </span>
+
+                    <h2 className="text-sm font-bold text-slate-900">
+                      {section.title}
+                    </h2>
+                  </div>
+
+                  <p className="form-section-hint">
+                    {section.hint}
+                  </p>
+                </div>
+
+                <div className="form-fields-grid">
+                  {section.fields.map(renderField)}
+                </div>
+              </div>
+            </section>
+          ))}
+
+          {/* Submission actions */}
+          <div
+            className="form-footer"
+          >
+            <div className="form-footer-content">
+              <div className="form-footer-info">
+                <span className="form-footer-icon">
+                  <Sparkles className="h-4 w-4" />
+                </span>
+
+                <div>
+                  <p className="form-footer-title">
+                    Ready to generate?
+                  </p>
+
+                  <p className="form-footer-note">
+                    All fields are required. Your PDF will be generated
+                    instantly.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="form-submit-button"
+              >
+                Generate PDF
+                <ArrowRight
+                    className="form-submit-icon"
+                />
+              </button>
+            </div>
+          </div>
+        </form>
+
+        {/* Privacy note */}
+        <div
+          className="form-privacy-note"
+        >
+          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+
+          <span>
+            Your information is used only to generate your cover page.
+          </span>
         </div>
       </div>
     </div>
