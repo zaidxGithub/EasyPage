@@ -3,27 +3,32 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Ensure proper print styling for PDF generation */
+/* Ensure proper print sstyling for PDF generation */
 @media print {
   .no-print {
     display: none !important;
   }
 }
 
-/* Custom scrollbar for better UX */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #c7d2fe #eef2ff;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: linear-gradient(to bottom right, #eff6ff, #eef2ff, #faf5ff);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  border-radius: 9999px;
+  background: #c7d2fe;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-     background: #a8a8a8;
+  background: #a5b4fc;
 }
