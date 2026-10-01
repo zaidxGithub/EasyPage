@@ -1,54 +1,201 @@
 import React from "react";
-import mypic from'../assets/myImg.png';
+import mypic from "../assets/myImg.png";
 
-const AboutSectionNavbar= () => {
+const AboutSectionNavbar = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12 space-y-12 text-gray-800  ">
-      
-      
-      <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col md:flex-row items-center gap-4">
+    <div className="about-section">
 
-        <div className="w-30 sm:h-30 sm:w-55 rounded-full overflow-hidden border-4 border-black-300 shadow-md">
-          <img
-            src={mypic}
-            alt="Developer"
-            className="object-cover w-full h-full"
-          />
+      {/* Developer */}
+      <div
+        className="group about-card about-profile-card"
+      >
+
+        <div className="about-profile-glow" />
+
+        <div className="about-developer-layout">
+
+          <div className="relative shrink-0">
+
+            <div className="about-avatar-glow" />
+
+            <div
+              className="about-avatar-frame"
+            >
+              <img
+                src={mypic}
+                alt="Mohammad Zaid"
+                className="about-avatar-image"
+              />
+            </div>
+
+            <span className="about-online-indicator" />
+
+          </div>
+
+
+          <div className="about-developer-copy">
+
+            <div className="about-developer-meta">
+
+              <span className="about-eyebrow">
+                About the Developer
+              </span>
+
+              <span className="about-meta-separator" />
+
+              <span className="about-role">
+                Web Developer
+              </span>
+
+            </div>
+
+            <h2 className="about-developer-name">
+              Mohammad Zaid
+            </h2>
+
+            <p className="about-copy about-developer-bio">
+              Hello! I'm{" "}
+              <span className="about-name-emphasis">
+                Mohammad Zaid
+              </span>
+              , a B.Tech CSE student at Integral University and a passionate
+              self-taught web developer. I specialize in building user-friendly
+              tools using{" "}
+                <span className="about-blue-emphasis">React</span> and{" "}
+                <span className="about-purple-emphasis">Tailwind CSS</span>.
+            </p>
+
+          </div>
+
         </div>
 
+      </div>
 
 
-        <div className="text-md leading-relaxed">
 
-          <h2 className="text-1xl sm:text-3xl font-bold mb-2">About the Developer</h2>
-          <p className="text-s sm:text-lg leading-relaxed  ">
-             Hello! I'm <span className="font-semibold">Mohammad Zaid</span>, a 3rd-year B.Tech CSE student at Integral University and a passionate self-taught web developer. I specialize in building user-friendly tools using React and Tailwind CSS.
+      {/* About this app */}
+      <div
+        className="group about-card about-app-card"
+      >
+
+        <div className="about-app-accent" />
+
+        <div className="about-card-content">
+
+          <div className="about-card-heading">
+
+            <span className="about-app-icon">
+
+              <svg
+                className="about-heading-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+
+            </span>
+
+            <h2 className="about-card-title">
+              About This App
+            </h2>
+
+          </div>
+
+
+          <p className="about-copy">
+
+            <span className="about-app-name">
+              Easy Page
+            </span>{" "}
+            is a front page generator tool for CSE assignments and lab reports.
+            Built using{" "}
+              <span className="about-blue-emphasis">
+              React
+            </span>{" "}
+            and{" "}
+              <span className="about-purple-emphasis">
+              Tailwind CSS
+            </span>
+            , it allows students to quickly generate assignment covers and lab
+            report templates with styling similar to official formats.
+
           </p>
+
         </div>
+
       </div>
 
-     
-      <div className="bg-white shadow-lg rounded-xl text-md p-6">
-        <h2 className="text-1xl sm:text-3xl font-bold mb-2">About This App</h2>
-        <p className="text-s sm:text-lg leading-relaxed">
-          <span className="font-semibold">Easy Page</span> is a front page generator tool for CSE assignments and lab reports. 
-          Built using React and Tailwind CSS, it allows students to quickly generate assignment covers and lab report templates 
-          with styling similar to official formats.
-        </p>
+
+
+      {/* Developer note */}
+      <div
+        className="about-card about-note-card"
+      >
+
+        <div className="about-note-accent" />
+
+        <div className="about-card-content">
+
+          <div className="about-card-heading">
+
+            <span className="about-note-icon">
+
+              <svg
+                className="about-heading-icon about-note-heading-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0Z" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+
+            </span>
+
+            <h2 className="about-card-title">
+              Developer's Note
+            </h2>
+
+          </div>
+
+
+          <p className="about-copy">
+
+            This app is currently under optimization for mobile devices. For
+            the best experience, please use it on a desktop browser.
+
+            <br />
+
+            <span className="about-note-paragraph">
+              Please note that the cover page templates are custom-built and
+              may slightly differ in design from official college formats.
+            </span>
+
+            <br />
+
+            <span className="about-note-paragraph about-note-emphasis">
+              If you encounter any bugs or layout issues, feel free to reach
+              out and report them to me directly.
+            </span>
+
+          </p>
+
+        </div>
+
       </div>
 
-      
-      <div className="bg-white border-l-4 border-red-500 rounded-xl p-6 mb-20 text-md">
-        <h2 className="sm:text-3xl font-bold mb-2">Developer's Note</h2>
-        <p className="sm:text-lg text-s text-red-500 leading-relaxed">
-          This app is currently under optimization for mobile devices. For the best experience, please use it on a desktop browser.
-          Please note that the cover page templates are custom-built and may slightly differ in design from official college formats. 
-          If you encounter any bugs or layout issues, feel free to reach out and report them to me directly.
-        </p>
-      </div>
-      
     </div>
   );
 };
+
+
 
 export default AboutSectionNavbar;

@@ -1,5 +1,5 @@
 import React from "react";
-import AboutSectionNavbar from "./AboutSectionNavabr.jsx";
+import AboutSectionNavbar from "../components/AboutSectionNavabr.jsx";
 const Navbar = ({ isOpen }) => {
   return (
     <div
@@ -10,7 +10,7 @@ const Navbar = ({ isOpen }) => {
       `}
       style={{ overflow: isOpen ? "auto" : "hidden" }}
     >
-     
+
  <  AboutSectionNavbar/>
 
 

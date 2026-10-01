@@ -3,3 +3,1499 @@
 html,body{
   overflow-x:hidden;
 }
+
+/* About section component */
+.about-section {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 1rem 0.5rem;
+}
+
+.about-section > :not(:last-child) {
+  margin-block-end: 1.25rem;
+}
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  backdrop-filter: blur(12px);
+}
+
+.about-profile-card {
+  border-color: color-mix(in oklab, white 8%, transparent);
+  background-color: color-mix(in oklab, white 3.5%, transparent);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 25%);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-profile-card:hover {
+  border-color: color-mix(in oklab, #3b82f6 20%, transparent);
+  background-color: color-mix(in oklab, white 5%, transparent);
+}
+
+.about-app-card {
+  border-color: color-mix(in oklab, white 8%, transparent);
+  background-color: color-mix(in oklab, white 3.5%, transparent);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-app-card:hover {
+  border-color: color-mix(in oklab, #a855f7 20%, transparent);
+  background-color: color-mix(in oklab, white 5%, transparent);
+}
+
+.about-note-card {
+  border-color: color-mix(in oklab, #f87171 10%, transparent);
+  background-color: color-mix(in oklab, #ef4444 3.5%, transparent);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
+}
+
+.about-profile-glow {
+  position: absolute;
+  top: -5rem;
+  right: -5rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, #2563eb 10%, transparent);
+  filter: blur(64px);
+  pointer-events: none;
+}
+
+.about-developer-layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.about-avatar-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-image: linear-gradient(to right in oklab, #3b82f6, #a855f7);
+  opacity: 0.3;
+  filter: blur(24px);
+}
+
+.about-avatar-frame {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, white 10%, transparent);
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, white 5%, transparent);
+  padding: 0.25rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+}
+
+.about-avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.about-online-indicator {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #080b12;
+  border-radius: 9999px;
+  background-color: #4ade80;
+}
+
+.about-developer-copy {
+  text-align: center;
+}
+
+.about-developer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-eyebrow {
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.about-meta-separator {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 9999px;
+  background-color: #4b5563;
+}
+
+.about-role {
+  color: #6b7280;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.about-developer-name {
+  margin-bottom: 0.5rem;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: -0.025em;
+}
+
+.about-copy {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.about-developer-bio {
+  max-width: 42rem;
+}
+
+.about-name-emphasis {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.about-blue-emphasis {
+  color: #60a5fa;
+}
+
+.about-purple-emphasis {
+  color: #c084fc;
+}
+
+.about-app-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.25rem;
+  height: 100%;
+  background-image: linear-gradient(to bottom in oklab, #3b82f6, #6366f1, #a855f7);
+}
+
+.about-note-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.25rem;
+  height: 100%;
+  background-image: linear-gradient(to bottom in oklab, #f87171, #fb923c);
+}
+
+.about-card-content {
+  padding-left: 0.75rem;
+}
+
+.about-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-app-icon {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in oklab, #60a5fa 10%, transparent);
+  border-radius: 0.5rem;
+  background-color: color-mix(in oklab, #3b82f6 10%, transparent);
+  color: #60a5fa;
+}
+
+.about-note-icon {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in oklab, #f87171 10%, transparent);
+  border-radius: 0.5rem;
+  background-color: color-mix(in oklab, #ef4444 10%, transparent);
+}
+
+.about-heading-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.about-note-heading-icon {
+  color: #f87171;
+}
+
+.about-card-title {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+.about-app-name {
+  color: white;
+  font-weight: 600;
+}
+
+.about-note-paragraph {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.about-note-emphasis {
+  color: color-mix(in oklab, #fca5a5 80%, transparent);
+}
+
+@media (min-width: 40rem) {
+  .about-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .about-developer-layout {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about-avatar-frame {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .about-developer-copy {
+    text-align: left;
+  }
+
+  .about-developer-meta {
+    justify-content: flex-start;
+  }
+
+  .about-developer-name {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .about-copy {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .about-card-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Form component */
+.form-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2.5rem 1rem;
+  background-image: linear-gradient(
+    to bottom right in oklab,
+    #f5faff,
+    #eef7ff,
+    #f7f8ff
+  );
+}
+
+.form-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.form-background-orb {
+  position: absolute;
+  width: 26.25rem;
+  height: 26.25rem;
+  border-radius: 9999px;
+  filter: blur(64px);
+}
+
+.form-background-orb--upper-left {
+  top: -10rem;
+  left: -10rem;
+  background-color: color-mix(in oklab, #7dd3fc 20%, transparent);
+}
+
+.form-background-orb--upper-right {
+  top: 5rem;
+  right: -100px;
+  background-color: color-mix(in oklab, #93c5fd 15%, transparent);
+}
+
+.form-background-orb--lower {
+  bottom: -180px;
+  left: 33.333333%;
+  background-color: color-mix(in oklab, #a5b4fc 10%, transparent);
+}
+
+.form-background-orb--center {
+  top: 50%;
+  left: 50%;
+  width: 31.25rem;
+  height: 31.25rem;
+  transform: translate(-50%, -50%);
+  background-color: color-mix(in oklab, white 50%, transparent);
+}
+
+.form-container {
+  position: relative;
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+.form-shell {
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, #dbeafe 80%, transparent);
+  border-radius: 1.5rem;
+  background-image: linear-gradient(
+    to bottom right in oklab,
+    white,
+    #fbfdff,
+    color-mix(in oklab, #eff6ff 60%, transparent)
+  );
+  box-shadow: 0 25px 80px rgb(37 99 235 / 10%);
+  backdrop-filter: blur(24px);
+}
+
+.template-panel {
+  border-bottom: 1px solid color-mix(in oklab, #dbeafe 60%, transparent);
+  padding: 1.25rem;
+  background-image: linear-gradient(
+    to bottom right in oklab,
+    color-mix(in oklab, white 90%, transparent),
+    color-mix(in oklab, #f0f9ff 30%, transparent),
+    color-mix(in oklab, #eff6ff 40%, transparent)
+  );
+}
+
+.template-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.template-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.template-title-icon {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to bottom right in oklab, #e0f2fe, #dbeafe);
+  color: #2563eb;
+}
+
+.template-instructions {
+  margin-top: 0.5rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.template-step {
+  display: none;
+  border: 1px solid #dbeafe;
+  border-radius: 9999px;
+  background-color: #eff6ff;
+  padding: 0.375rem 0.75rem;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+.template-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.template-option {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: left;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.template-option:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in oklab, #3b82f6 15%, transparent);
+}
+
+.template-option--active {
+  border-color: #93c5fd;
+  background-image: linear-gradient(to bottom right in oklab, #f0f9ff, white, #eef2ff);
+  box-shadow:
+    0 4px 6px -1px color-mix(in oklab, #3b82f6 10%, transparent),
+    0 2px 4px -2px color-mix(in oklab, #3b82f6 10%, transparent),
+    0 0 0 1px #93c5fd;
+}
+
+.template-option--idle {
+  border-color: #e2e8f0;
+  background-color: color-mix(in oklab, white 80%, transparent);
+}
+
+.template-option--idle:hover {
+  transform: translateY(-0.125rem);
+  border-color: #bfdbfe;
+  background-color: color-mix(in oklab, #eff6ff 30%, transparent);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 10%),
+    0 2px 4px -2px rgb(0 0 0 / 10%);
+}
+
+.template-option-glow {
+  position: absolute;
+  top: -2.5rem;
+  right: -2.5rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, #60a5fa 10%, transparent);
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.template-option-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.template-option-icon {
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.template-option-icon--active {
+  background-image: linear-gradient(to bottom right in oklab, #0ea5e9, #2563eb, #4f46e5);
+  color: white;
+  box-shadow:
+    0 10px 15px -3px color-mix(in oklab, #3b82f6 20%, transparent),
+    0 4px 6px -4px color-mix(in oklab, #3b82f6 20%, transparent);
+}
+
+.template-option-icon--idle {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.template-option--idle:hover .template-option-icon--idle {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.template-option-copy {
+  min-width: 0;
+}
+
+.template-option-title {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.template-option-title--active {
+  color: #172554;
+}
+
+.template-option-title--idle {
+  color: #0f172a;
+}
+
+.template-option-note {
+  display: block;
+  margin-top: 0.25rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.template-option-check {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  margin-left: auto;
+  color: #2563eb;
+}
+
+.form-section {
+  border-bottom: 1px solid color-mix(in oklab, #dbeafe 60%, transparent);
+  padding: 1.25rem;
+  background-image: linear-gradient(
+    to right in oklab,
+    transparent,
+    color-mix(in oklab, #f0f9ff 20%, transparent),
+    transparent
+  );
+}
+
+.form-section-layout {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.form-section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.form-section-icon {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dbeafe;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(to bottom right in oklab, #f0f9ff, #dbeafe);
+  color: #2563eb;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+}
+
+.form-section-hint {
+  max-width: 180px;
+  margin-top: 0.5rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.form-fields-grid {
+  display: grid;
+  column-gap: 1.25rem;
+  row-gap: 1.25rem;
+}
+
+.form-field--wide {
+  grid-column: span 1;
+}
+
+.form-field-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.form-control {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid;
+  border-radius: 0.75rem;
+  background-color: color-mix(in oklab, white 90%, transparent);
+  padding: 0 1rem;
+  color: #1e293b;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  outline: none;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-control--select {
+  appearance: none;
+}
+
+.form-control--input {
+  padding-right: 2.5rem;
+}
+
+.form-control--input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.form-control--ready {
+  border-color: #dbeafe;
+}
+
+.form-control--ready:hover {
+  border-color: #bfdbfe;
+}
+
+.form-control--ready:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px color-mix(in oklab, #3b82f6 10%, transparent);
+}
+
+.form-control--error {
+  border-color: #fca5a5;
+  background-color: color-mix(in oklab, #fef2f2 50%, transparent);
+}
+
+.form-control--error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px color-mix(in oklab, #ef4444 10%, transparent);
+}
+
+.form-field-success {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(-50%);
+  color: #10b981;
+  pointer-events: none;
+}
+
+.form-field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.form-field-error-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.form-footer {
+  padding: 1.25rem;
+  background-image: linear-gradient(
+    to right in oklab,
+    color-mix(in oklab, #f0f9ff 80%, transparent),
+    color-mix(in oklab, #eff6ff 70%, transparent),
+    color-mix(in oklab, #eef2ff 70%, transparent)
+  );
+}
+
+.form-footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-footer-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-footer-icon {
+  display: flex;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dbeafe;
+  border-radius: 0.75rem;
+  background-color: white;
+  color: #3b82f6;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+}
+
+.form-footer-title {
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
+.form-footer-note {
+  margin-top: 0.25rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.form-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(to right in oklab, #0ea5e9, #2563eb, #4f46e5);
+  padding: 0.75rem 1.75rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  box-shadow:
+    0 10px 15px -3px color-mix(in oklab, #3b82f6 20%, transparent),
+    0 4px 6px -4px color-mix(in oklab, #3b82f6 20%, transparent);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-submit-button:hover {
+  transform: translateY(-0.125rem);
+  box-shadow:
+    0 20px 25px -5px color-mix(in oklab, #3b82f6 25%, transparent),
+    0 8px 10px -6px color-mix(in oklab, #3b82f6 25%, transparent);
+}
+
+.form-submit-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in oklab, #3b82f6 20%, transparent);
+}
+
+.form-submit-button:active {
+  transform: translateY(0);
+}
+
+.form-submit-icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-submit-button:hover .form-submit-icon {
+  transform: translateX(0.25rem);
+}
+
+.form-privacy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.form-privacy-note > svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: #10b981;
+}
+
+@media (min-width: 40rem) {
+  .form-page {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .template-panel,
+  .form-section {
+    padding: 2rem;
+  }
+
+  .template-step {
+    display: block;
+  }
+
+  .template-grid,
+  .form-fields-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-field--wide {
+    grid-column: span 2;
+  }
+
+  .form-footer {
+    padding: 1.5rem 2rem;
+  }
+
+  .form-footer-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 48rem) {
+  .form-section-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* App component */
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  height: 3.75rem;
+  border: 2px solid currentColor;
+  border-bottom-color: #93c5fd;
+  background-color: rgb(0 0 0 / 90%);
+  backdrop-filter: blur(12px);
+}
+
+.site-header-inner {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.site-header-row {
+  display: flex;
+  height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-brand {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+}
+
+.site-brand-logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.site-brand-name {
+  background-color: white;
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.site-brand-accent {
+  background-image: linear-gradient(to right in oklab, #3b82f6, #c084fc);
+  background-clip: text;
+  color: transparent;
+}
+
+.site-header-status {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-header-placeholder {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.site-menu {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.site-menu-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  filter: invert(1) brightness(2);
+}
+
+.site-menu-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.app-canvas {
+  min-height: 100vh;
+  margin-top: 2.5rem;
+  background-image: linear-gradient(to bottom right in oklab, #eff6ff, #eef2ff, #faf5ff);
+  backdrop-filter: blur(12px);
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: 3.5rem;
+  background-image: linear-gradient(to bottom right in oklab, #f7fbff, #eef7ff, #f7f8ff);
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+}
+
+.hero-orb--top-left {
+  top: -8rem;
+  left: -8rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: color-mix(in oklab, #7dd3fc 20%, transparent);
+}
+
+.hero-orb--top-right {
+  top: 2.5rem;
+  right: -8rem;
+  width: 24rem;
+  height: 24rem;
+  background-color: color-mix(in oklab, #93c5fd 15%, transparent);
+}
+
+.hero-orb--bottom {
+  bottom: -180px;
+  left: 50%;
+  width: 24rem;
+  height: 24rem;
+  transform: translateX(-50%);
+  background-color: color-mix(in oklab, #a5b4fc 10%, transparent);
+}
+
+.hero-orb--center {
+  top: 50%;
+  left: 50%;
+  width: 18rem;
+  height: 18rem;
+  transform: translate(-50%, -50%);
+  background-color: color-mix(in oklab, white 70%, transparent);
+}
+
+.hero-top-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 75%;
+  height: 1px;
+  transform: translateX(-50%);
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, #60a5fa 50%, transparent),
+    transparent
+  );
+}
+
+.hero-container {
+  position: relative;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.hero-content {
+  max-width: 56rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #dbeafe;
+  border-radius: 9999px;
+  background-color: color-mix(in oklab, white 75%, transparent);
+  padding: 0.5rem 1rem;
+  color: #2563eb;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  backdrop-filter: blur(12px);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-badge:hover {
+  border-color: #bfdbfe;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+}
+
+.hero-status-dot {
+  position: relative;
+  display: flex;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.hero-status-ping {
+  position: absolute;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: #60a5fa;
+  opacity: 0.5;
+  animation: app-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.hero-status-dot::after {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #3b82f6;
+  content: "";
+}
+
+.hero-heading {
+  color: #0f172a;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.hero-heading-break {
+  display: none;
+}
+
+.hero-heading-accent {
+  display: block;
+  margin-top: 0.75rem;
+  background-image: linear-gradient(to right in oklab, #0ea5e9, #2563eb, #4f46e5);
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2rem;
+}
+
+.hero-description {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.hero-description-emphasis {
+  color: #475569;
+  font-weight: 500;
+}
+
+.hero-benefits {
+  display: flex;
+  max-width: 36rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.5rem;
+  row-gap: 0.75rem;
+  margin: 2rem auto 0;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.hero-benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-benefit-check {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.hero-benefit-check--indigo {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 2.5rem auto 0;
+}
+
+.hero-divider-short {
+  width: 3rem;
+  height: 1px;
+}
+
+.hero-divider-short--blue {
+  background-image: linear-gradient(to right, transparent, #bfdbfe);
+}
+
+.hero-divider-short--indigo {
+  background-image: linear-gradient(to left, transparent, #c7d2fe);
+}
+
+.hero-divider-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+}
+
+.hero-divider-dot--blue {
+  background-color: color-mix(in oklab, #60a5fa 60%, transparent);
+}
+
+.hero-divider-dot--indigo {
+  background-color: color-mix(in oklab, #818cf8 60%, transparent);
+}
+
+.hero-divider-long {
+  width: 6rem;
+  height: 1px;
+  background-image: linear-gradient(to right, #bfdbfe, #c7d2fe, #bfdbfe);
+}
+
+.preview-scroll {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.pdf-preview-page {
+  width: 794px;
+  min-height: 1123px;
+  margin: 0.75rem auto;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pdf-download-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-block: 1.5rem;
+  border: 1px solid color-mix(in oklab, #dbeafe 80%, transparent);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  background-image: linear-gradient(to bottom right in oklab, #f0f9ff, #eff6ff, #eef2ff);
+  box-shadow: 0 15px 45px rgb(37 99 235 / 8%);
+}
+
+.pdf-download-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pdf-download-orb {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 9999px;
+  filter: blur(64px);
+}
+
+.pdf-download-orb--sky {
+  top: -5rem;
+  left: -5rem;
+  background-color: color-mix(in oklab, #7dd3fc 20%, transparent);
+}
+
+.pdf-download-orb--indigo {
+  right: -5rem;
+  bottom: -5rem;
+  background-color: color-mix(in oklab, #a5b4fc 20%, transparent);
+}
+
+.pdf-download-button {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  max-width: 320px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  outline: none;
+  background-image: linear-gradient(to right in oklab, #0ea5e9, #2563eb, #4f46e5);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  box-shadow:
+    0 10px 15px -3px color-mix(in oklab, #3b82f6 20%, transparent),
+    0 4px 6px -4px color-mix(in oklab, #3b82f6 20%, transparent);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pdf-download-button:hover {
+  transform: translateY(-0.125rem);
+  background-image: linear-gradient(to right in oklab, #0284c7, #1d4ed8, #4338ca);
+  box-shadow:
+    0 20px 25px -5px color-mix(in oklab, #3b82f6 25%, transparent),
+    0 8px 10px -6px color-mix(in oklab, #3b82f6 25%, transparent);
+}
+
+.pdf-download-button:focus {
+  box-shadow:
+    0 0 0 2px #eff6ff,
+    0 0 0 6px color-mix(in oklab, #3b82f6 20%, transparent);
+}
+
+.pdf-download-button:active,
+.pdf-download-button:disabled:hover {
+  transform: translateY(0);
+}
+
+.pdf-download-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pdf-download-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pdf-download-button:hover .pdf-download-icon {
+  transform: translateY(0.125rem);
+}
+
+.pdf-download-arrow {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pdf-download-button:hover .pdf-download-arrow {
+  transform: translateX(0.125rem);
+}
+
+.pdf-download-helper {
+  position: relative;
+  z-index: 10;
+  margin-top: 0.75rem;
+  color: color-mix(in oklab, #3b82f6 80%, transparent);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1rem;
+  text-align: center;
+}
+
+.pdf-download-warning {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  max-width: 36rem;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin-top: 1rem;
+  border: 1px solid color-mix(in oklab, #fde68a 80%, transparent);
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background-color: color-mix(in oklab, #fffbeb 80%, transparent);
+  color: #92400e;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  backdrop-filter: blur(4px);
+}
+
+.pdf-download-warning-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+  color: #f59e0b;
+}
+
+.pdf-download-warning-copy {
+  color: inherit;
+  font-size: 11px;
+  line-height: 1rem;
+  text-align: left;
+}
+
+@keyframes app-ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 40rem) {
+  .site-header {
+    height: 4.25rem;
+  }
+
+  .site-header-inner {
+    padding-inline: 1.5rem;
+  }
+
+  .site-header-row {
+    height: 4rem;
+  }
+
+  .site-brand-name {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .site-header-status {
+    display: flex;
+  }
+
+  .site-menu-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .app-canvas {
+    margin-top: 4.5rem;
+  }
+
+  .hero-section {
+    padding-block: 4rem;
+  }
+
+  .hero-container {
+    padding-inline: 1.5rem;
+  }
+
+  .hero-heading-break {
+    display: block;
+  }
+
+  .hero-heading {
+    font-size: 3rem;
+  }
+
+  .hero-heading-accent {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+
+  .hero-benefits {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .preview-scroll {
+    overflow-x: hidden;
+  }
+
+  .pdf-preview-page--scaled {
+    transform: scale(1);
+  }
+
+  .pdf-download-panel {
+    margin-block: 2rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .pdf-download-button {
+    max-width: 356px;
+    padding-block: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .pdf-download-helper {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .pdf-download-warning {
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+
+  .pdf-download-warning-icon {
+    margin-top: 0;
+  }
+
+  .pdf-download-warning-copy {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .site-header-inner {
+    padding-inline: 0.25rem;
+  }
+
+  .hero-section {
+    padding-block: 5rem;
+  }
+
+  .hero-container {
+    padding-inline: 2rem;
+  }
+
+  .hero-heading {
+    font-size: 3.75rem;
+  }
+
+  .hero-heading-accent {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
