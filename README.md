@@ -44,10 +44,11 @@ As a CSE student, I saw many peers struggle with creating front pages at the las
 
 ---
 
-##Preview
+## Preview
 
-![Preview](https://github.com/zaidxGithub/EasyPage/blob/main/public/Screenshot%202026-08-25%20202802.png)  
+![EasyPage Main Preview](https://raw.githubusercontent.com/zaidxGithub/EasyPage/main/public/sc1Main.png)
 
+![EasyPage Footer Preview](https://raw.githubusercontent.com/zaidxGithub/EasyPage/main/public/sc2Footer.png)
 
 ---
 
@@ -58,8 +59,8 @@ Have suggestions or want to contribute? Feel free to open issues or pull request
 ---
 
 ##  Author
-Mohammad Zaid  
-🎓 B.Tech CSE, Integral University  
+Mohammad Zaid
+🎓 B.Tech CSE, Integral University
 
 ---
 
